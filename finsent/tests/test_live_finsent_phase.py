@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import os
+import pytest
+
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -18,6 +21,11 @@ from finsent.app.services.provider_routers import MarketDataRouter
 from finsent.app.services.signal_engine import CompositeSignalEngine
 from finsent.app.services.signal_service_v2 import SignalEngineV2Service
 from finsent.app.services.symbol_registry import registry
+
+# These read market history from the local data/finsent.db, which is not committed.
+needs_local_market_db = pytest.mark.skipif(
+    os.getenv("CI") == "true", reason="needs the local market database (data/finsent.db), which is not in the repo"
+)
 
 
 class FakeResponse:
@@ -162,6 +170,7 @@ def test_compare_frame_keeps_successful_symbol_when_peer_fails() -> None:
     assert frame.loc[frame["ticker"] == "META", "quote_quality"].iloc[0] == "unavailable"
 
 
+@needs_local_market_db
 def test_compare_callback_renders_aapl_nvda_tsla_without_shape_error() -> None:
     app = create_app()
     client = app.server.test_client()

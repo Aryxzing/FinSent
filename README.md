@@ -1,5 +1,7 @@
 # FinSent
 
+[![Tests](https://github.com/Aryxzing/FinSent/actions/workflows/tests.yml/badge.svg)](https://github.com/Aryxzing/FinSent/actions/workflows/tests.yml)
+
 Financial News Sentiment & Short-Term Market Intelligence Platform
 
 FinSent is a local Dash application for financial news sentiment, catalyst explanation, live/latest market context, and short-term signal research. It is designed for academic demonstration and research reproducibility, not for automated trading or investment advice.

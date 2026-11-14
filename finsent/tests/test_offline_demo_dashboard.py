@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 import pytest
 from sqlalchemy import func, select
 
@@ -14,6 +16,11 @@ from finsent.app.dashboard.view_model import (
 )
 from finsent.app.database.base import SessionLocal
 from finsent.app.database.entities import EventStudyResult, ExperimentRun, NewsArticle, SentimentAnalysisRun, SignalRun
+
+# These read market history from the local data/finsent.db, which is not committed.
+needs_local_market_db = pytest.mark.skipif(
+    os.getenv("CI") == "true", reason="needs the local market database (data/finsent.db), which is not in the repo"
+)
 
 
 def test_local_research_mode_detects_transferred_research_state(monkeypatch) -> None:
@@ -60,6 +67,7 @@ def test_dashboard_state_uses_stored_news_finbert_prices_and_research_signals(mo
     assert "v2" in state.signal_meta_map[focus]["research_signals"]
 
 
+@needs_local_market_db
 def test_offline_demo_labels_missing_live_quote_without_hiding_historical_data(monkeypatch) -> None:
     _disable_live_credentials(monkeypatch)
     focus = get_default_ticker_for_exchange("US")
