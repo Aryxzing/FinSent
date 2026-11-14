@@ -47,4 +47,3 @@ Phase-by-phase working notes, kept as a record of how the project evolved:
 - [Phase 12 Cohort Preregistration](PHASE12_COHORT_PREREGISTRATION.md), [Phase 12 V2 Diagnostic](PHASE12_V2_DIAGNOSTIC.md), [Phase 13 Error Analysis](PHASE13_ERROR_ANALYSIS.md), [Phase 14 Research Protocol](PHASE14_RESEARCH_PROTOCOL.md), [Phase 15 Holdout Acquisition](PHASE15_HOLDOUT_ACQUISITION.md)
 - Superseded V1 references: [Database V1](DATABASE_V1_REFERENCE.md), [Event Study V1](EVENT_STUDY_V1_REFERENCE.md), [Signal Engine V1](SIGNAL_ENGINE_V1_REFERENCE.md)
 - [Local Changelog](LOCAL_CHANGELOG.md)
-- [Full project report (HTML)](FinSent_Project_Report.html)
