@@ -3,7 +3,7 @@
 Use this from a clean checkout.
 
 ```powershell
-git clone https://github.com/Orphyxz/FinSent.git
+git clone https://github.com/Aryxzing/FinSent.git
 cd FinSent
 python -m venv .venv
 .\.venv\Scripts\activate

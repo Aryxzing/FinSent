@@ -3,7 +3,7 @@
 Use this from a clean checkout.
 
 ```bash
-git clone https://github.com/Orphyxz/FinSent.git
+git clone https://github.com/Aryxzing/FinSent.git
 cd FinSent
 python3 -m venv .venv
 source .venv/bin/activate
